@@ -12,7 +12,7 @@ gradle :moduleName:build
 ```
 
 
-###Debug
+### Debug
 
 看到控制台输出
 Listening for transport dt_socket at address: 5005
