@@ -1,0 +1,32 @@
+
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+allprojects {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+
+ext {
+    global_javaVersion = JavaVersion.VERSION_1_7
+    global_junitVersion = "4.12"
+    global_logbackVersion = "1.2.3"
+    global_log4jVersion = "1.2.17"
+    global_slf4jVersion = "1.7.25"
+    global_springBootGradleVersion = "1.5.4.RELEASE"
+    global_springLoadedVersion = "1.2.7.RELEASE"
+    global_commonIOVersion = "2.5"
+}
