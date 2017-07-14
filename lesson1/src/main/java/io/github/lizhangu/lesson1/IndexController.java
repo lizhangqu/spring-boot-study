@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Created by lizhangqu on 2017/7/14.
  */
 @Controller
-public class TestController {
+public class IndexController {
 
-    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     @ResponseBody
     public String getUnreadMessage() {
-        return "hahah";
+        return "Hello World Spring Boot!";
     }
 }
