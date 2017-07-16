@@ -1,4 +1,4 @@
-package io.github.lizhangqu.lesson3;
+package io.github.lizhangqu.lesson4;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
