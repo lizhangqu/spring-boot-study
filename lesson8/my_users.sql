@@ -1,0 +1,10 @@
+SET FOREIGN_KEY_CHECKS=0;
+CREATE DATABASE IF NOT EXISTS `my_users`;
+USE `my_users`;
+DROP TABLE IF EXISTS `my_users`;
+CREATE TABLE `my_users` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '主键id',
+  `user_name` varchar(32) DEFAULT NULL COMMENT '用户名',
+  `user_age` INT DEFAULT NULL COMMENT '年龄',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
