@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="io.github.lizhangqu.lesson9.mapper.UserMapper">
+    <resultMap id="BaseResultMap" type="io.github.lizhangqu.lesson9.model.User">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="user_name" property="userName" jdbcType="VARCHAR"/>
+        <result column="user_age" property="userAge" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, user_name, user_age
+    </sql>
+
+    <select id="getAll" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM my_users
+    </select>
+
+    <select id="getOne" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM my_users
+        WHERE id = #{id}
+    </select>
+
+    <insert id="insert" parameterType="io.github.lizhangqu.lesson9.model.User">
+        INSERT INTO
+        my_users
+        (user_name,user_age)
+        VALUES
+        (#{userName}, #{userAge})
+    </insert>
+
+    <update id="update" parameterType="io.github.lizhangqu.lesson9.model.User">
+        UPDATE
+        my_users
+        SET
+        <if test="userName != null">user_name = #{userName},</if>
+        <if test="userAge != null">user_age = #{userAge}</if>
+        WHERE
+        id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="java.lang.Long">
+        DELETE FROM
+        my_users
+        WHERE
+        id =#{id}
+    </delete>
+</mapper>
