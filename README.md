@@ -11,6 +11,10 @@ gradle :moduleName:bootRun
 gradle :moduleName:build
 ```
 
+也可以使用command+f9进行编译
+
+热部署必须使用bootRun运行，否则无法生效
+
 
 ### Debug
 
